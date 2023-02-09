@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bomfim.codereview.service.FormatType;
 import com.bomfim.codereview.service.MessageService;
 
 @RestController
@@ -42,4 +43,10 @@ public class MessageController {
         }
         return message;
     }
+
+    @GetMapping("/format")
+    public String formatMessage(@RequestParam String message, @RequestParam FormatType formatType) {
+        return new MessageService().formatMessage(message, formatType);
+    }
+
 }

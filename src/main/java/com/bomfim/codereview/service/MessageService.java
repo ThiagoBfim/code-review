@@ -1,5 +1,7 @@
 package com.bomfim.codereview.service;
 
+import java.util.List;
+
 public class MessageService {
 
 
@@ -37,4 +39,9 @@ public class MessageService {
 
         return "🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵";
     }
+
+    public String formatMessage(String message, FormatType formatType) {
+        return formatType.getFormatWord().format(message);
+    }
+
 }
